@@ -1,0 +1,116 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-23 04:38+0100\n"
+"PO-Revision-Date: 2024-06-25 12:07+0000\n"
+"Last-Translator:   <jylanepro@gmail.com>\n"
+"Language-Team: Français <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\core\models.py:11 .\core\models.py:18
+msgid "category"
+msgstr "catégorie"
+
+#: .\core\models.py:12
+msgid "categories"
+msgstr "catégories"
+
+#: .\core\models.py:20
+msgid "title"
+msgstr "titre"
+
+#: .\core\models.py:21
+msgid "content"
+msgstr "contenu"
+
+#: .\core\models.py:24
+msgid "Show Image"
+msgstr "affiche image"
+
+#: .\core\models.py:28
+msgid "post"
+msgstr "publication"
+
+#: .\core\models.py:29
+msgid "posts"
+msgstr "publications"
+
+#: .\core\views.py:38
+#, python-brace-format
+msgid "authmessage {first} {last}"
+msgstr "Bonjour, {first} {last}, bienvenue."
+
+#: .\core\views.py:40
+msgid "anonmessage"
+msgstr "Vous n'êtes pas connecté."
+
+#: .\templates\base.html:4
+msgid "dir"
+msgstr "ltr"
+
+#: .\templates\chatbot.html:8 .\templates\chatbot.html:14
+#: .\templates\navbar.html:15
+msgid "Chatbot"
+msgstr "Chatbot"
+
+#: .\templates\chatbot.html:17
+msgid "Type your message here..."
+msgstr "Tapez votre message ici..."
+
+#: .\templates\chatbot.html:18
+msgid "Send"
+msgstr "Envoyer"
+
+#: .\templates\index.html:15
+msgid "herotitle"
+msgstr "Bonjour, bienvenue sur notre site web."
+
+#: .\templates\index.html:49
+msgid "ago"
+msgstr "il y a"
+
+#: .\templates\navbar.html:5
+msgid "navbar"
+msgstr "Mon site"
+
+#: .\templates\navbar.html:12
+msgid "navbarhome"
+msgstr "Accueil"
+
+#: .\translation_tutorial\settings.py:110
+msgid "English"
+msgstr "Anglais"
+
+#: .\translation_tutorial\settings.py:111
+msgid "French"
+msgstr ""
+"FrançaisContent-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+
+msgid "Search"
+msgstr "Rechercher"
+
+msgid "Search Results"
+msgstr "Rechercher des résultats"
+
+msgid "Impact of Artificial Intelligence"
+msgstr "Impact of Artificial Intelligence"
+
+msgid "The Power of Data Analytics in Modern Business"
+msgstr "The Power of Data Analytics in Modern Business"
+
+msgid "Politic and IA"
+msgstr "Politique et l'Intelligence Artificielle"
+
+msgid "Search blog posts..."
+msgstr "Rechercher des articles de blog..."
+
+msgid "Open chatbot"
+msgstr "Ouvrir le chatbot"

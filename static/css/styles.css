@@ -1,0 +1,21 @@
+body {
+    background-image: url('/static/images/rm314-bb-18.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white; /* For better text visibility on dark background */
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+}
+
+.custom-navbar .nav-link, .custom-navbar .navbar-brand {
+    color: white !important; /* Navbar text color */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for cards */
+    color: black; /* Text color for cards */
+}

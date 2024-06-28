@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+    {% if messages %}
+        <ul class="messages list-unstyled">
+            {% for message in messages %}
+                <li {% if message.tags %}class="alert alert-{{ message.tags }} mt-3"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">{% trans 'herotitle' %}</h1>
+
+        <!-- Formulaire de recherche -->
+        <form method="get" action="{% url 'search' %}">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="{% trans 'Search blog posts...' %}" name="query">
+                <button class="btn btn-primary" type="submit">{% trans 'Search' %}</button>
+            </div>
+        </form>
+
+        <!-- Résultats de recherche -->
+        <div id="searchResults" class="mt-4">
+            {% if search_results %}
+                <h3>{% trans 'Search Results' %}</h3>
+                <ul class="list-unstyled">
+                    {% for result in search_results %}
+                        <li class="mb-2">
+                            <a href="{{ result.url }}">{{ result.title }}</a>
+                            <p>{{ result.summary }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <!-- Articles -->
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        {% if post.show_image %}
+                            {% if post.title == "Evolution and Impact of Artificial Intelligence" or post.title == "Evolution et impact de l'intelligence artificielle" %}
+                                <img src="{% static 'images/imageia.png' %}" class="card-img-top" alt="Impact de l'intelligence artificielle">
+                            {% elif post.title == "The Power of Data Analytics in Modern Business" or post.title == "Le Pouvoir de l'Analyse de Données" %}
+                                <img src="{% static 'images/data.png' %}" class="card-img-top" alt="Le pouvoir de l'analyse de données dans les affaires modernes">
+                            {% elif post.title == "POLITIC AND IA" or post.title == "Politique et l'Intelligence Artificielle" %}
+                                <img src="{% static 'images/politic_and_ia.png' %}" class="card-img-top" alt="Politique et IA">
+                            {% endif %}
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ post.created|timesince }} {% trans 'ago' %}, {{ post.category.name }}</h6>
+                            <p class="card-text">{{ post.content }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Bouton pour ouvrir la barre latérale du chatbot -->
+        <button type="button" class="btn btn-primary" onclick="toggleChatbot()">
+            {% trans 'Chatbot' %}
+        </button>
+    </div>
+{% endblock %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const searchForm = document.querySelector("form[action='{% url 'search' %}']");
+        searchForm.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const formData = new FormData(searchForm);
+            const query = formData.get("query");
+            const response = await fetch("{% url 'search' %}?query=" + query);
+            const data = await response.json();
+
+            const searchResultsDiv = document.getElementById("searchResults");
+            searchResultsDiv.innerHTML = `<h3>{% trans 'Search Results' %}</h3><ul class="list-unstyled">`;
+
+            data.results.forEach(result => {
+                searchResultsDiv.innerHTML += `
+                    <li class="mb-2">
+                        <a href="${result.url}">${result.title}</a>
+                        <p>${result.summary}</p>
+                    </li>
+                `;
+            });
+
+            searchResultsDiv.innerHTML += `</ul>`;
+        });
+    });
+</script>

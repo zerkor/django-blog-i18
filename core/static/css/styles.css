@@ -1,0 +1,25 @@
+/* styles.css */
+.custom-navbar {
+    background-color: #007bff; /* Couleur de fond de la navbar */
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    color: white; /* Couleur des liens de la navbar */
+}
+
+.custom-navbar .navbar-nav .nav-link:hover {
+    color: #ffc107; /* Couleur des liens au survol */
+}
+
+.custom-navbar .dropdown-menu {
+    background-color: #007bff; /* Couleur de fond du menu déroulant */
+}
+
+.custom-navbar .dropdown-menu .dropdown-item {
+    color: white; /* Couleur des éléments du menu déroulant */
+}
+
+.custom-navbar .dropdown-menu .dropdown-item:hover {
+    color: #ffc107; /* Couleur des éléments du menu déroulant au survol */
+    background-color: transparent; /* Garder le fond transparent */
+}
