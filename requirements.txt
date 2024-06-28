@@ -4,4 +4,4 @@ pytz>=2020.1
 sqlparse>=0.3.1
 gunicorn>=20.0.4
 
-OPENAI_API_KEY = 'votre_clé_api_chatgpt'
+
